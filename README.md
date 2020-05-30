@@ -68,7 +68,7 @@ $ docker run --rm -t \
              -e GIT_BACKUP_DIR='/backup' \
              -e GITHUB_TOKEN='MYGITHUBTOKEN' \
              -e GITLAB_TOKEN='MYGITLABTOKEN' \
-             quay.io/jonhadfield/soba
+             quay.io/jeffplourde/soba
 ```
 
 To hide credentials, you can instead use exported environment variables and specify using this syntax:
@@ -79,7 +79,7 @@ $ docker run --rm -t \
              -e GIT_BACKUP_DIR='/backup' \
              -e GITHUB_TOKEN=$GITHUB_TOKEN \
              -e GITLAB_TOKEN=$GITLAB_TOKEN \
-             quay.io/jonhadfield/soba
+             quay.io/jeffplourde/soba
 ```
 
 
@@ -133,9 +133,9 @@ _Tested on DS916+_
 2. Install Docker from the Synology Package Center
 3. Open Docker and select 'Image'
 4. Select 'Add' from the top menu and choose 'Add From URL'
-5. In 'Repository URL' enter 'jonhadfield/soba', leave other options as default and click 'Add'
+5. In 'Repository URL' enter 'jeffplourde/soba', leave other options as default and click 'Add'
 6. When it asks to 'Choose Tag' accept the default 'latest' by pressing 'Select'
-7. Select image 'jonhadfield/soba:latest' from the list and click 'Launch' from the top menu
+7. Select image 'jeffplourde/soba:latest' from the list and click 'Launch' from the top menu
 8. Set 'Container Name' to 'soba' and select 'Advanced Settings'
 9. Check 'Enable auto-restart'
 10. Under 'Volume' select 'Add folder' and choose the directory created in step 1. Set the 'Mount Path' to '/backup'

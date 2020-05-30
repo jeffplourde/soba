@@ -53,15 +53,15 @@ find-updates:
 	go list -u -m -json all | go-mod-outdated -update -direct
 
 bintray:
-	curl -X PUT -0 -T .local_dist/soba_darwin_amd64 -ujonhadfield:$(BINTRAY_APIKEY) "https://api.bintray.com/content/jonhadfield/soba/soba/$(BUILD_TAG)/soba_darwin_amd64;bt_package=soba;bt_version=$(BUILD_TAG);publish=1"
-	curl -X PUT -0 -T .local_dist/soba_linux_amd64 -ujonhadfield:$(BINTRAY_APIKEY) "https://api.bintray.com/content/jonhadfield/soba/soba/$(BUILD_TAG)/soba_linux_amd64;bt_package=soba;bt_version=$(BUILD_TAG);publish=1"
-	curl -X PUT -0 -T .local_dist/soba_linux_386 -ujonhadfield:$(BINTRAY_APIKEY) "https://api.bintray.com/content/jonhadfield/soba/soba/$(BUILD_TAG)/soba_linux_386;bt_package=soba;bt_version=$(BUILD_TAG);publish=1"
-	curl -X PUT -0 -T .local_dist/soba_linux_arm -ujonhadfield:$(BINTRAY_APIKEY) "https://api.bintray.com/content/jonhadfield/soba/soba/$(BUILD_TAG)/soba_linux_arm;bt_package=soba;bt_version=$(BUILD_TAG);publish=1"
-	curl -X PUT -0 -T .local_dist/soba_linux_arm64 -ujonhadfield:$(BINTRAY_APIKEY) "https://api.bintray.com/content/jonhadfield/soba/soba/$(BUILD_TAG)/soba_linux_arm64;bt_package=soba;bt_version=$(BUILD_TAG);publish=1"
-	curl -X PUT -0 -T .local_dist/soba_netbsd_amd64 -ujonhadfield:$(BINTRAY_APIKEY) "https://api.bintray.com/content/jonhadfield/soba/soba/$(BUILD_TAG)/soba_netbsd_amd64;bt_package=soba;bt_version=$(BUILD_TAG);publish=1"
-	curl -X PUT -0 -T .local_dist/soba_openbsd_amd64 -ujonhadfield:$(BINTRAY_APIKEY) "https://api.bintray.com/content/jonhadfield/soba/soba/$(BUILD_TAG)/soba_openbsd_amd64;bt_package=soba;bt_version=$(BUILD_TAG);publish=1"
-	curl -X PUT -0 -T .local_dist/soba_freebsd_amd64 -ujonhadfield:$(BINTRAY_APIKEY) "https://api.bintray.com/content/jonhadfield/soba/soba/$(BUILD_TAG)/soba_freebsd_amd64;bt_package=soba;bt_version=$(BUILD_TAG);publish=1"
-	curl -XPOST -0 -ujonhadfield:$(BINTRAY_APIKEY) https://api.bintray.com/content/jonhadfield/soba/soba/$(BUILD_TAG)/publish
+	curl -X PUT -0 -T .local_dist/soba_darwin_amd64 -ujeffplourde:$(BINTRAY_APIKEY) "https://api.bintray.com/content/jeffplourde/soba/soba/$(BUILD_TAG)/soba_darwin_amd64;bt_package=soba;bt_version=$(BUILD_TAG);publish=1"
+	curl -X PUT -0 -T .local_dist/soba_linux_amd64 -ujeffplourde:$(BINTRAY_APIKEY) "https://api.bintray.com/content/jeffplourde/soba/soba/$(BUILD_TAG)/soba_linux_amd64;bt_package=soba;bt_version=$(BUILD_TAG);publish=1"
+	curl -X PUT -0 -T .local_dist/soba_linux_386 -ujeffplourde:$(BINTRAY_APIKEY) "https://api.bintray.com/content/jeffplourde/soba/soba/$(BUILD_TAG)/soba_linux_386;bt_package=soba;bt_version=$(BUILD_TAG);publish=1"
+	curl -X PUT -0 -T .local_dist/soba_linux_arm -ujeffplourde:$(BINTRAY_APIKEY) "https://api.bintray.com/content/jeffplourde/soba/soba/$(BUILD_TAG)/soba_linux_arm;bt_package=soba;bt_version=$(BUILD_TAG);publish=1"
+	curl -X PUT -0 -T .local_dist/soba_linux_arm64 -ujeffplourde:$(BINTRAY_APIKEY) "https://api.bintray.com/content/jeffplourde/soba/soba/$(BUILD_TAG)/soba_linux_arm64;bt_package=soba;bt_version=$(BUILD_TAG);publish=1"
+	curl -X PUT -0 -T .local_dist/soba_netbsd_amd64 -ujeffplourde:$(BINTRAY_APIKEY) "https://api.bintray.com/content/jeffplourde/soba/soba/$(BUILD_TAG)/soba_netbsd_amd64;bt_package=soba;bt_version=$(BUILD_TAG);publish=1"
+	curl -X PUT -0 -T .local_dist/soba_openbsd_amd64 -ujeffplourde:$(BINTRAY_APIKEY) "https://api.bintray.com/content/jeffplourde/soba/soba/$(BUILD_TAG)/soba_openbsd_amd64;bt_package=soba;bt_version=$(BUILD_TAG);publish=1"
+	curl -X PUT -0 -T .local_dist/soba_freebsd_amd64 -ujeffplourde:$(BINTRAY_APIKEY) "https://api.bintray.com/content/jeffplourde/soba/soba/$(BUILD_TAG)/soba_freebsd_amd64;bt_package=soba;bt_version=$(BUILD_TAG);publish=1"
+	curl -XPOST -0 -ujeffplourde:$(BINTRAY_APIKEY) https://api.bintray.com/content/jeffplourde/soba/soba/$(BUILD_TAG)/publish
 
 release: build-all bintray wait-for-publish build-docker release-docker
 
@@ -69,16 +69,16 @@ wait-for-publish:
 	sleep 120
 
 build-docker:
-	cd docker ; docker build --build-arg build_tag=$(BUILD_TAG) --no-cache -t quay.io/jonhadfield/soba:$(BUILD_TAG) .
-	cd docker ; docker tag quay.io/jonhadfield/soba:$(BUILD_TAG) quay.io/jonhadfield/soba:latest
-	cd docker ; docker tag quay.io/jonhadfield/soba:$(BUILD_TAG) jonhadfield/soba:$(BUILD_TAG)
-	cd docker ; docker tag quay.io/jonhadfield/soba:$(BUILD_TAG) jonhadfield/soba:latest
+	cd docker ; docker build --build-arg build_tag=$(BUILD_TAG) --no-cache -t quay.io/jeffplourde/soba:$(BUILD_TAG) .
+	cd docker ; docker tag quay.io/jeffplourde/soba:$(BUILD_TAG) quay.io/jeffplourde/soba:latest
+	cd docker ; docker tag quay.io/jeffplourde/soba:$(BUILD_TAG) jeffplourde/soba:$(BUILD_TAG)
+	cd docker ; docker tag quay.io/jeffplourde/soba:$(BUILD_TAG) jeffplourde/soba:latest
 
 release-docker:
-	cd docker ; docker push quay.io/jonhadfield/soba:$(BUILD_TAG)
-	cd docker ; docker push quay.io/jonhadfield/soba:latest
-	cd docker ; docker push jonhadfield/soba:$(BUILD_TAG)
-	cd docker ; docker push jonhadfield/soba:latest
+	cd docker ; docker push quay.io/jeffplourde/soba:$(BUILD_TAG)
+	cd docker ; docker push quay.io/jeffplourde/soba:latest
+	cd docker ; docker push jeffplourde/soba:$(BUILD_TAG)
+	cd docker ; docker push jeffplourde/soba:latest
 
 help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'

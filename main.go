@@ -14,7 +14,7 @@ import (
 	"runtime"
 
 	"github.com/carlescere/scheduler"
-	githosts "github.com/jonhadfield/githosts-utils"
+	githosts "github.com/jeffplourde/githosts-utils"
 	"github.com/pkg/errors"
 )
 
