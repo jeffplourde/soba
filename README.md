@@ -1,6 +1,6 @@
 
 # soba: backup hosted git repositories
-[![Build Status](https://travis-ci.org/jonhadfield/soba.svg?branch=master)](https://travis-ci.org/jonhadfield/soba) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8b6afc5274e84d50bd5345580d3a0405)](https://www.codacy.com/app/jonhadfield/soba?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jonhadfield/soba&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/8b6afc5274e84d50bd5345580d3a0405)](https://www.codacy.com/app/jonhadfield/soba?utm_source=github.com&utm_medium=referral&utm_content=jonhadfield/soba&utm_campaign=Badge_Coverage) [![Go Report Card](https://goreportcard.com/badge/github.com/jonhadfield/soba)](https://goreportcard.com/report/github.com/jonhadfield/soba)
+[![Build Status](https://travis-ci.org/jeffplourde/soba.svg?branch=master)](https://travis-ci.org/jeffplourde/soba) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8b6afc5274e84d50bd5345580d3a0405)](https://www.codacy.com/app/jeffplourde/soba?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=jeffplourde/soba&amp;utm_campaign=Badge_Grade) [![Codacy Badge](https://api.codacy.com/project/badge/Coverage/8b6afc5274e84d50bd5345580d3a0405)](https://www.codacy.com/app/jeffplourde/soba?utm_source=github.com&utm_medium=referral&utm_content=jeffplourde/soba&utm_campaign=Badge_Coverage) [![Go Report Card](https://goreportcard.com/badge/github.com/jeffplourde/soba)](https://goreportcard.com/report/github.com/jeffplourde/soba)
 
 - [about](#about)
 - [configuration](#configuration)
@@ -43,7 +43,7 @@ To set provider tokens see [below](#setting-provider-tokens).
 
 ### run using command line
 
-Download the latest release [here](https://github.com/jonhadfield/soba/releases) and then install:
+Download the latest release [here](https://github.com/jeffplourde/soba/releases) and then install:
 ```
 $ install <soba binary> /usr/local/bin/soba
 ```
